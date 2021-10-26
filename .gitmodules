@@ -1,0 +1,3 @@
+[submodule "projects/Research"]
+	path = projects/Research
+	url = git@github.com:AHEAD-IntelligentCamera/fast-reid-research.git

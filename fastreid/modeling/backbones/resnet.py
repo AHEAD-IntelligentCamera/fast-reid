@@ -138,6 +138,7 @@ class ResNet(nn.Module):
         self.layer2 = self._make_layer(block, 128, layers[1], 2, bn_norm, with_ibn, with_se)
         self.layer3 = self._make_layer(block, 256, layers[2], 2, bn_norm, with_ibn, with_se)
         self.layer4 = self._make_layer(block, 512, layers[3], last_stride, bn_norm, with_se=with_se)
+        self.identity = nn.Identity()
 
         self.random_init()
 
@@ -177,6 +178,61 @@ class ResNet(nn.Module):
             [Non_local(2048, bn_norm) for _ in range(non_layers[3])])
         self.NL_4_idx = sorted([layers[3] - (i + 1) for i in range(non_layers[3])])
 
+    def layer_out(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+
+        # layer 1
+        x1 = self.identity(x)
+        NL1_counter = 0
+        if len(self.NL_1_idx) == 0:
+            self.NL_1_idx = [-1]
+        for i in range(len(self.layer1)):
+            x1 = self.layer1[i](x1)
+            if i == self.NL_1_idx[NL1_counter]:
+                _, C, H, W = x1.shape
+                x1 = self.NL_1[NL1_counter](x1)
+                NL1_counter += 1
+        # layer 2
+        x2 = self.identity(x1)
+        NL2_counter = 0
+        if len(self.NL_2_idx) == 0:
+            self.NL_2_idx = [-1]
+        for i in range(len(self.layer2)):
+            x2 = self.layer2[i](x2)
+            if i == self.NL_2_idx[NL2_counter]:
+                _, C, H, W = x2.shape
+                x2 = self.NL_2[NL2_counter](x2)
+                NL2_counter += 1
+
+        # layer 3
+        x3 = self.identity(x2)
+        NL3_counter = 0
+        if len(self.NL_3_idx) == 0:
+            self.NL_3_idx = [-1]
+        for i in range(len(self.layer3)):
+            x3 = self.layer3[i](x3)
+            if i == self.NL_3_idx[NL3_counter]:
+                _, C, H, W = x3.shape
+                x3 = self.NL_3[NL3_counter](x3)
+                NL3_counter += 1
+
+        # layer 4
+        x4 = self.identity(x4)
+        NL4_counter = 0
+        if len(self.NL_4_idx) == 0:
+            self.NL_4_idx = [-1]
+        for i in range(len(self.layer4)):
+            x4 = self.layer4[i](x4)
+            if i == self.NL_4_idx[NL4_counter]:
+                _, C, H, W = x4.shape
+                x4 = self.NL_4[NL4_counter](x4)
+                NL4_counter += 1
+
+        return [x1, x2, x3, x4]
+    
     def forward(self, x):
         x = self.conv1(x)
         x = self.bn1(x)
