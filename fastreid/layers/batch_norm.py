@@ -12,6 +12,8 @@ from torch import nn
 
 __all__ = ["IBN", "get_norm"]
 
+# Requires BatchNorm1D here. Inheritance of following is from batchnorm2D
+
 
 class BatchNorm(nn.BatchNorm2d):
     def __init__(self, num_features, eps=1e-05, momentum=0.1, weight_freeze=False, bias_freeze=False, weight_init=1.0,

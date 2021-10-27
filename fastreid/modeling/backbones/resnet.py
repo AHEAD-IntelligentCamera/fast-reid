@@ -220,7 +220,7 @@ class ResNet(nn.Module):
                 NL3_counter += 1
 
         # layer 4
-        x4 = self.identity(x4)
+        x4 = self.identity(x3)
         NL4_counter = 0
         if len(self.NL_4_idx) == 0:
             self.NL_4_idx = [-1]
