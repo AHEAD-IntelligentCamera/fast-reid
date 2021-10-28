@@ -10,7 +10,7 @@ from torch import nn
 from fastreid.config import configurable
 from fastreid.modeling.backbones import build_backbone
 from fastreid.modeling.heads import build_heads
-from fastreid.modeling.losses import *
+from fastreid.modeling.losses import * # NOQA
 from .build import META_ARCH_REGISTRY
 
 

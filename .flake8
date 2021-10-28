@@ -8,6 +8,7 @@ ignore =
     E226,
     E241,
     E221,
+    E272,
     # Blank line contains whitespace
     W293,
     # Do not use bare 'except'
@@ -19,5 +20,6 @@ ignore =
     # isort found an import in the wrong position
     I001,
     F401,
+    F405,
 max-line-length = 79
 exclude = __init__.py, build, torchreid/metrics/rank_cylib/
