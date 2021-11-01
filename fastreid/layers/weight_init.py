@@ -25,6 +25,10 @@ def weights_init_kaiming(m):
         if m.affine:
             nn.init.constant_(m.weight, 1.0)
             nn.init.constant_(m.bias, 0.0)
+    elif classname.find("Arcface") != -1 or classname.find("Circle") != -1:
+        nn.init.kaiming_uniform_(m.weight, a=math.sqrt(5))
+        if m.bias is not None:
+            nn.init.constant_(m.bias, 0.0)
 
 
 def weights_init_classifier(m):

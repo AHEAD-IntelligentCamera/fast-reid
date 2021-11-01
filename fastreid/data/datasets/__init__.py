@@ -17,6 +17,7 @@ from .cuhk03 import CUHK03
 from .dukemtmcreid import DukeMTMC
 from .market1501 import Market1501
 from .msmt17 import MSMT17
+from .occludedduke import OccludedDuke
 from .AirportALERT import AirportALERT
 from .iLIDS import iLIDS
 from .pku import PKU
