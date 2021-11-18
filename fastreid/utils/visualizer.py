@@ -80,6 +80,7 @@ class Visualizer:
                 all_imgs.append(gallery_img)
                 gallery_img = np.rollaxis(np.asarray(gallery_img, dtype=np.uint8), 0, 3)
                 if cmc[i] == 1:
+                    continue
                     label = 'true'
                     ax.add_patch(plt.Rectangle(xy=(0, 0), width=gallery_img.shape[1] - 1,
                                                height=gallery_img.shape[0] - 1, edgecolor=(1, 0, 0),

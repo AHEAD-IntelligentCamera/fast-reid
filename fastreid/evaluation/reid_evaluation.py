@@ -108,7 +108,7 @@ class ReidEvaluator(DatasetEvaluator):
 
         mAP = np.mean(all_AP)
         mINP = np.mean(all_INP)
-        for r in [1, 5, 10]:
+        for r in [1, 3, 5, 10]:
             self._results['Rank-{}'.format(r)] = cmc[r - 1] * 100
         self._results['mAP'] = mAP * 100
         self._results['mINP'] = mINP * 100

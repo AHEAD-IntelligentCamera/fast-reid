@@ -16,6 +16,10 @@ def build_transforms(cfg, is_train=True):
     if is_train:
         size_train = cfg.INPUT.SIZE_TRAIN
 
+        # random crop
+        do_random_crop = cfg.INPUT.RANDOMCROP.ENABLED
+        random_crop_prob = cfg.INPUT.RANDOMCROP.PROB
+
         # crop
         do_crop = cfg.INPUT.CROP.ENABLED
         crop_size = cfg.INPUT.CROP.SIZE
@@ -69,6 +73,10 @@ def build_transforms(cfg, is_train=True):
             res.append(T.RandomResizedCrop(size=crop_size[0] if len(crop_size) == 1 else crop_size,
                                            interpolation=3,
                                            scale=crop_scale, ratio=crop_ratio))
+        if do_random_crop:
+            res.append(T.RandomApply([T.RandomResizedCrop(size=size_train[0] if len(size_train) == 1 else size_train,
+                                                          interpolation=3,
+                                                          scale=crop_scale, ratio=crop_ratio)], p=random_crop_prob))
         if do_pad:
             res.extend([T.Pad(padding_size, padding_mode=padding_mode),
                         T.RandomCrop(size_train[0] if len(size_train) == 1 else size_train)])

@@ -399,6 +399,15 @@ class OSNet(nn.Module):
         x = self.conv5(x)
         return x
 
+    def layer_out(self, x):
+        x = self.conv1(x)
+        x = self.maxpool(x)
+        x1 = self.conv2(x)
+        x2 = self.conv3(x1)
+        x3 = self.conv4(x2)
+        x4 = self.conv5(x3)
+        return [x1, x2, x3, x4]
+
 
 def init_pretrained_weights(model, key=''):
     """Initializes model with pretrained weights.

@@ -4,7 +4,7 @@
 @contact: sherlockliao01@gmail.com
 """
 
-__all__ = ['ToTensor', 'RandomPatch', 'AugMix', ]
+__all__ = ['ToTensor', 'RandomPatch', 'AugMix']
 
 import math
 import random
