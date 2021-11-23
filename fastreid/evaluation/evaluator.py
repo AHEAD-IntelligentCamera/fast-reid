@@ -116,6 +116,7 @@ def inference_on_dataset(model, data_loader, evaluator, flip_test=False):
             start_compute_time = time.perf_counter()
             outputs = model(inputs)
             # Flip test
+            
             if flip_test:
                 inputs["images"] = inputs["images"].flip(dims=[3])
                 flip_outputs = model(inputs)

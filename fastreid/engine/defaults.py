@@ -451,7 +451,7 @@ class DefaultTrainer(TrainerBase):
 
         if len(results) == 1:
             results = list(results.values())[0]
-
+        
         return results
 
     @staticmethod
