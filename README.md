@@ -1,3 +1,9 @@
+## INSTRUCTIONS FOR REVIEWERS
+
+This Repo is slightly modified from the [Fast-ReID toolbox](https://github.com/JDAI-CV/fast-reid) commit [43da387b77fec86248154cb00bd42c106e6bf94a](https://github.com/JDAI-CV/fast-reid/tree/43da387b77fec86248154cb00bd42c106e6bf94a). For installation, follow instructions provided by the repo, found in [INSTALL.md](./INSTALL.md).
+
+Our contributions are in the [projects/Research](projects/Research) directory. The [ReadMe](projects/Research/README.md) file contained therin contains training and evaluation instructions. 
+
 <img src=".github/FastReID-Logo.png" width="300" >
 
 [![Gitter](https://badges.gitter.im/fast-reid/community.svg)](https://gitter.im/fast-reid/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
@@ -7,12 +13,6 @@ Gitter: [fast-reid/community](https://gitter.im/fast-reid/community?utm_source=s
 Wechat: 
 
 <img src=".github/wechat_group.png" width="150" >
-
-## INSTRUCTIONS FOR REVIEWERS
-
-This Repo is slightly modified from the [Fast-ReID toolbox](https://github.com/JDAI-CV/fast-reid) commit [43da387b77fec86248154cb00bd42c106e6bf94a](https://github.com/JDAI-CV/fast-reid/tree/43da387b77fec86248154cb00bd42c106e6bf94a). For installation, follow instructions provided by the repo (Found in [INSTALL.md])
-
-Our contributions are in the [projects/Research] directory. The [ReadMe](projects/Research/README.md) file contained therin contains training and evaluation instructions. 
 
 FastReID is a research platform that implements state-of-the-art re-identification algorithms. It is a ground-up rewrite of the previous version, [reid strong baseline](https://github.com/michuanhaohao/reid-strong-baseline).
 

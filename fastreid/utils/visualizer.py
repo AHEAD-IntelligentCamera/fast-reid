@@ -80,18 +80,17 @@ class Visualizer:
                 all_imgs.append(gallery_img)
                 gallery_img = np.rollaxis(np.asarray(gallery_img, dtype=np.uint8), 0, 3)
                 if cmc[i] == 1:
-                    continue
-                    label = 'true'
+                    label = 'True'
                     ax.add_patch(plt.Rectangle(xy=(0, 0), width=gallery_img.shape[1] - 1,
                                                height=gallery_img.shape[0] - 1, edgecolor=(1, 0, 0),
                                                fill=False, linewidth=5))
                 else:
-                    label = 'false'
+                    label = 'False'
                     ax.add_patch(plt.Rectangle(xy=(0, 0), width=gallery_img.shape[1] - 1,
                                                height=gallery_img.shape[0] - 1,
                                                edgecolor=(0, 0, 1), fill=False, linewidth=5))
                 ax.imshow(gallery_img)
-                ax.set_title(f'{self.sim[q_idx, sort_idx[i]]:.3f}/{label}/cam{cam_id}')
+                ax.set_title(f'SIM: {self.sim[q_idx, sort_idx[i]]:.3f}/{label}/CAM ID: {cam_id}')
                 ax.axis("off")
             # if actmap:
             #     act_outputs = []
@@ -153,7 +152,7 @@ class Visualizer:
 
         query_indices = np.argsort(self.all_ap)
         if rank_sort == 'descending': query_indices = query_indices[::-1]
-
+        
         query_indices = query_indices[:int(num_vis)]
         self.save_rank_result(query_indices, output, max_rank, vis_label, label_sort, actmap)
 
