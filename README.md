@@ -1,8 +1,10 @@
-## INSTRUCTIONS FOR REVIEWERS
+## **INSTRUCTIONS FOR REVIEWERS - CVPR 2022**
 
-This Repo is slightly modified from the [Fast-ReID toolbox](https://github.com/JDAI-CV/fast-reid) commit [43da387b77fec86248154cb00bd42c106e6bf94a](https://github.com/JDAI-CV/fast-reid/tree/43da387b77fec86248154cb00bd42c106e6bf94a). For installation, follow instructions provided by the repo, found in [INSTALL.md](./INSTALL.md).
+> This Repo is slightly modified from the [Fast-ReID toolbox](https://github.com/JDAI-CV/fast-reid)  [Latest Commit](https://github.com/JDAI-CV/fast-reid/tree/43da387b77fec86248154cb00bd42c106e6bf94a). For installation, follow instructions provided by the repo, found in [INSTALL.md](./INSTALL.md).
 
-Our contributions are in the [projects/Research](projects/Research) directory. The [ReadMe](projects/Research/README.md) file contained therin contains training and evaluation instructions. 
+> ### Our contributions related to *Submission 10365: Dynamic Template Initialization for Part-Aware Person Re-ID*, are in the [projects/Research](projects/Research) directory. The [ReadMe](projects/Research/README.md) file contained therin contains training and evaluation instructions.
+<br />
+
 
 <img src=".github/FastReID-Logo.png" width="300" >
 
