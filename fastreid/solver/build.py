@@ -328,7 +328,6 @@ def build_lr_scheduler(cfg, optimizer, iters_per_epoch):
             "T_max": max_epoch,
             "eta_min": cfg.SOLVER.ETA_MIN_LR,
         },
-
     }
 
     scheduler_dict["lr_sched"] = getattr(lr_scheduler, cfg.SOLVER.SCHED)(

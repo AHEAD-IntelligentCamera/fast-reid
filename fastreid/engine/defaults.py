@@ -413,7 +413,7 @@ class DefaultTrainer(TrainerBase):
     @classmethod
     def build_evaluator(cls, cfg, dataset_name, output_dir=None):
         data_loader, num_query = cls.build_test_loader(cfg, dataset_name)
-        return data_loader, ReidEvaluator(cfg, num_query, output_dir) 
+        return data_loader, ReidEvaluator(cfg, num_query, output_dir)
 
     @classmethod
     def test(cls, cfg, model):
