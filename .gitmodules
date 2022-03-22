@@ -1,3 +1,6 @@
 [submodule "projects/Research"]
 	path = projects/Research
 	url = git@github.com:AHEAD-IntelligentCamera/fast-reid-research.git
+[submodule "projects/uncertainty-opereid"]
+	path = projects/uncertainty-opereid
+	url = git@github.com:AHEAD-IntelligentCamera/uncertainty-opereid.git
